@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NETWORKING ASSINGMENT BY ARNAB MONDAL</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			::-webkit-scrollbar{
+				width: 5px;
+			}
+			::-webkit-scrollbar-track{
+				background: #dcdcdc;
+			}
+			::-webkit-scrollbar-thumb{
+				background: #0007;
+			}
+			::-webkit-scrollbar-thumb:hover{
+				background: #0007;
+			}
+		</style>
+		<style type=text/css>
+			html{
+				font-size:10px;
+			}
+			:root{
+				--color-1: #673ab7;
+			}
+			body{
+				line-height: 1.5;
+				font-family: sans-serif;
+				background-color: #0002;
+			}
+			*{
+				box-sizing: border-box;
+				margin:0;
+				padding:0;
+			}
+			a{
+				text-decoration: none;
+				color:black;
+			}
+			.container{
+				max-width: 1170px;
+				margin: auto;
+			}
+			.row{
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.align-items-center{
+				align-items: center;
+			}
+			.justify-content-between{
+				justify-content: space-between;
+			}
+			
+			.header{
+				background-color: var(--color-1);
+				padding:0.2rem 0.1rem;
+				position: relative;
+			}
+			.header .logo,
+			.header .nav{
+				padding:0 2rem;
+			}
+			.header .logo a{
+				font-size: 2.5rem;
+				color: #ffffff;
+				text-transform: capitalize;
+			}
+			.header .nav ul li{
+				display: inline-block;
+				margin-left: 40px;
+			}
+			.header .nav ul li a{
+				display: block;
+				font-size: 16px;
+				padding:10px 0;
+				color: rgba(255,255,255,0.7);
+				text-transform: capitalize;
+				transition: all 0.5s ease;
+			}
+			.header .nav ul li a:hover,
+			.header .nav ul li a.active{
+				color: #ffffff;
+			}
+			.header #nav-check{
+				position: absolute;
+				opacity:0;
+				pointer-events: none;
+			}
+			.nav-toggler{
+				height: 34px;
+				width: 44px;
+				background-color: var(--color-1);
+				border-radius: 4px;
+				cursor: pointer;
+				display: none;
+				align-items: center;
+				justify-content: center;
+				margin-right: 15px;
+			}
+			.nav-toggler span{
+				display: block;
+				height: 2px;
+				width: 20px;
+				background-color: #ffffff;
+				position: relative;
+			}
+			.nav-toggler span::before,
+			.nav-toggler span::after{
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: #ffffff;
+				left:0;
+			}
+			.nav-toggler span::before{
+				top: -6px;
+			}
+			.nav-toggler span::after{
+				top: 6px;
+			}
+			@media(max-width: 991px){
+				.nav-toggler{
+					display: flex;
+				}
+				.header .nav{
+					position: absolute;
+					left:0;
+					top:100%;
+					width: 100%;
+					background-color: var(--color-1);
+					border-top: 1px solid rgba(255,255,255,0.2);
+					opacity:0;
+					visibility: hidden;
+				}
+				.header .nav ul li{
+					display: block;
+					margin:0;
+				}
+				.header #nav-check:checked ~ .nav{
+					opacity: 1;
+					visibility: visible;
+				}
+				.header #nav-check:checked ~ .nav-toggler span{
+					background-color: transparent;
+				}
+				.header #nav-check:checked ~ .nav-toggler span::before{
+					top:0;
+					transform: rotate(45deg);
+				}
+				.header #nav-check:checked ~ .nav-toggler span::after{
+					top:0;
+					transform: rotate(-45deg);
+				}
+			}
+			.banner {
+				height: calc(100rem-400rem);
+				background-image: url('photo/ab.jpg');
+				background-size: var(--bg-size);
+				background-attachment:fixed;
+				background-position: center;
+				box-shadow: 0px 5px 7px #666666;
+				border: 1px solid #666666;
+
+			}
+			.banner h2 {
+				margin-top:10rem;
+				margin-bottom:0;
+				margin-left: 3rem;
+				margin-right: 3rem;
+				padding:0;
+				font-size: 5vw;
+				font-family: Californian FB;
+				color: #fff;
+				text-align: center;
+			}
+			.banner hr {
+				margin-top:0;
+				margin-bottom:10rem;
+				width:15rem;
+				height:1rem;
+				border: 0;
+				border-top: 0.3rem solid red;
+			}
+			.block_body{
+				display: block;
+				margin-top:0;
+				margin-left:3rem;
+				margin-right:3rem;
+				margin-bottom:2rem;
+				padding:0.2rem;
+				background-color: #ffffff;
+				font-family: Times New Roman;
+				font-size: 2rem;
+				box-shadow: 0px 5px 7px #666666;
+				border: 1px solid #fffff ;
+			}
+			.fullbody{
+				margin:0 3rem;
+				padding:0;
+				font-family: Times New Roman;
+				font-size: 1.5rem;
+				text-align:justify;
+			}
+			.fullbody h3 {
+				margin-top:20px;
+				margin-bottom:0;
+				margin-bottom:0;
+				font-size: 3rem;
+				color: black;
+			}
+			.fullbody p {
+				margin-top:10px;
+				margin-bottom:0;
+				font-size: 1.5rem;
+				color: black;
+			}
+			.fullbody ul {
+				margin-top:10px;
+				margin-bottom:0;
+				font-size: 1.5remx;
+				color: black;
+			}
+			.fullbody li {
+				margin-top:1rem;
+				margin-left:10rem;
+				margin-bottom:0;
+				font-size: 1.5rem;
+				color: black;
+			}
+			#nava{
+				margin-top:30px;
+				text-align:center;
+			}
+			#nava a{
+				text-decoration:none;
+				display: inline-block;
+				padding:8px 16px;
+				margin:20px 20px;
+				background-color:skyblue;
+				color:black;
+			}
+			#downnav h1{
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				text-align: center;
+				font-family: Lucida Handwriting;
+				color: #fff;
+			}
+			#downnav{
+				margin:0;
+				padding:0;
+				max-width: 100%;
+				min-height: 120px;
+				background: #262626;
+				margin-top:40px;
+				padding:0;
+				width: 100%;
+				height: 110px;
+				background: #262626;
+				box-shadow: 0 -5px 7px #666666;
+				border: 1px solid #666666;
+			}
+			#downnav ul{
+				list-style: none;
+				padding: 0;
+				margin:20px 0px;
+				text-align: center;
+			}
+			#downnav li{
+				display: inline-block;
+				text-align: center;
+				max-width:95px;
+				heght:70px;
+				line-height:0px;
+			}
+			#downnav a{
+				text-decoration: none;
+				color:#fff;
+				width: 100px;
+				display: block;
+				font-size: 15px;
+				fonr-wight: bold;
+				text-align: center;
+				display:block;
+				fonr-wight:bolder;
+			}
+			#downnav a:hover{
+				background:blue;
+				color:#fff;
+				transition:0.1s;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<div class="row align-items-center justify-content-between">
+					<div class="logo">
+						<a href="#">Arnab Mondal</a>
+				</div>
+				<input type="checkbox" id="nav-check">
+				<label for="nav-check" class="nav-toggler">
+					<span></span>
+				</label>
+				<nav class="nav">
+					<ul>
+						<li><a href ="index.html">HOME</a></li>
+						<li><a href ="1.html">HISTORY</a></li>
+						<li><a href ="2.html">MENU</a></li>
+						<li><a href ="3.html">PRODUCT</a></li>
+						<li><a href ="ABOUT US.html">ABOUT US</a></li>
+					</ul>
+				</nav>
+				</div>
+			</div>
+		</header>
+		
+		<div class="banner"><center><h2>INTRODUCTION OF NETWORKING</h2><hr/></center></div>
+		<div class="adds">
+			<h1>
+				<marquee>
+					<a href="ABOUT US.html">
+						NETWORKING ASSIGNMENT BY ARNAB MONDAL
+					</a>
+				</marquee>
+			</h1>
+		</div>
+		<div class="block_body">
+			<div class="fullbody">
+				<h3>What is a network?</h3>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						A network is two or more computers (or other electronic devices) that are connected together, usually by cables or Wi-Fi.
+						Some computer networks will have a server. A server is a powerful computer that often acts as a central hub for services in a network, eg emails, internet access and file storage. Each computer connected to a server is called a client.
+						A computer that is not connected to a network is called a standalone computer.
+						<img src="photo/large.png" style="display:block; margin: 0 auto; max-width: 100%; width:40rem; height:auto; float:right;">
+					</p>
+				<h3>What are the benefits of a network?</h3>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Using a network allows you to share:
+						<ul>
+							<li>hardware, such as a printer.</li>
+							<li>software, allowing multiple users to run the same programs on different computers.</li>
+							<li>data, so that other people can access shared work and you can access your data from any computer on the network.</li>
+						</ul>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						Networking is critical if you want to use your computer to communicate.
+						Without it you couldn’t send an email, a text or an instant message.
+						We use a huge network on a daily basis and this is called the internet.
+						Around three billion people use the internet to share data, news and resources, amongst many other things.
+					</p>
+				<h3>What problems can occur with a network?</h3>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						If we connect computers or devices together in a network we can expose ourselves to some problems.
+						If the network breaks, this can make a number of tasks it is used for quite difficult.
+						For example, it might not be possible to share photographs and opinions with friends.
+						If computers and devices are networked together, we can expose ourselves to hackers and viruses. Most viruses are spread over a network and most hackers use a network to access other people’s computers.
+						Without a network connection, a hacker would have to physically get to your computer.
+						<img src="photo/a1.png" style="display:block; margin: 0 auto; max-width: 100%; width:40rem; height:auto;">
+					</p>
+				<h3>Types of network</h3>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						There are two main types of network:
+					<ul>
+						<li>a local area network (LAN)</li>
+						<li>a wide area network (WAN)</li>
+					</ul>
+					</p>
+				<h3>Local area network (LAN)</h3>
+					<p>
+						<img src="photo/lan.png" style="display:block; margin: 2rem auto; max-width: 100%; width:40rem; height:auto;">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						A local area network is when computers or devices are connected together over a small geographical area, such as within a home, a building or one site.
+						A LAN can be created to share data or hardware such as a printer, or to share an internet connection.
+					</p>
+				<h3>Wide area network (WAN)</h4>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						A wide area network is when computers or devices are connected together over a large geographical area.
+						For example, a company with an office in London and another in Beijing would use a WAN to allow the employees to share one network.
+						Some companies will connect a number of LANs in different areas together to create a WAN.
+						The biggest WAN we know is the internet.
+						<img src="photo/wan.png" style="display:block; margin: 0 auto; max-width: 100%; width:40rem; height:auto;">
+					</p>
+				<div id="nava">
+					<a href="#" class="next">
+					next
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="downnav">
+			<h1>Thanks for reading......</h1><hr/>
+			<ul>
+				<li><a href ="index.html">HOME</a></li>
+				<li><a href	="1.html">HISTORY</a></li>
+				<li><a href ="2.html">MENU</a></li>
+				<li><a href ="3.html">PRODUCT</a></li>
+				<li><a href ="ABOUT US.html">ABOUT US</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

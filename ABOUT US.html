@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NETWORKING ASSINGMENT BY ARNAB MONDAL</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			::-webkit-scrollbar{
+				width: 5px;
+			}
+			::-webkit-scrollbar-track{
+				background: #dcdcdc;
+			}
+			::-webkit-scrollbar-thumb{
+				background: #0007;
+			}
+			::-webkit-scrollbar-thumb:hover{
+				background: #0007;
+			}
+		</style>
+		<style type=text/css>
+		html{
+				font-size:10px;
+			}
+			:root{
+				--color-1: #673ab7;
+			}
+			body{
+				line-height: 1.5;
+				font-family: sans-serif;
+				background-color: #0002;
+			}
+			*{
+				box-sizing: border-box;
+				margin:0;
+				padding:0;
+			}
+			a{
+				text-decoration: none;
+				color:black;
+			}
+			.container{
+				max-width: 1170px;
+				margin: auto;
+			}
+			.row{
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.align-items-center{
+				align-items: center;
+			}
+			.justify-content-between{
+				justify-content: space-between;
+			}
+			
+			.header{
+				background-color: var(--color-1);
+				padding:0.2rem 0.1rem;
+				position: relative;
+			}
+			.header .logo,
+			.header .nav{
+				padding:0 2rem;
+			}
+			.header .logo a{
+				font-size: 2.5rem;
+				color: #ffffff;
+				text-transform: capitalize;
+			}
+			.header .nav ul li{
+				display: inline-block;
+				margin-left: 40px;
+			}
+			.header .nav ul li a{
+				display: block;
+				font-size: 16px;
+				padding:10px 0;
+				color: rgba(255,255,255,0.7);
+				text-transform: capitalize;
+				transition: all 0.5s ease;
+			}
+			.header .nav ul li a:hover,
+			.header .nav ul li a.active{
+				color: #ffffff;
+			}
+			.header #nav-check{
+				position: absolute;
+				opacity:0;
+				pointer-events: none;
+			}
+			.nav-toggler{
+				height: 34px;
+				width: 44px;
+				background-color: var(--color-1);
+				border-radius: 4px;
+				cursor: pointer;
+				display: none;
+				align-items: center;
+				justify-content: center;
+				margin-right: 15px;
+			}
+			.nav-toggler span{
+				display: block;
+				height: 2px;
+				width: 20px;
+				background-color: #ffffff;
+				position: relative;
+			}
+			.nav-toggler span::before,
+			.nav-toggler span::after{
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: #ffffff;
+				left:0;
+			}
+			.nav-toggler span::before{
+				top: -6px;
+			}
+			.nav-toggler span::after{
+				top: 6px;
+			}
+			@media(max-width: 991px){
+				.nav-toggler{
+					display: flex;
+				}
+				.header .nav{
+					position: absolute;
+					left:0;
+					top:100%;
+					width: 100%;
+					background-color: var(--color-1);
+					border-top: 1px solid rgba(255,255,255,0.2);
+					opacity:0;
+					visibility: hidden;
+				}
+				.header .nav ul li{
+					display: block;
+					margin:0;
+				}
+				.header #nav-check:checked ~ .nav{
+					opacity: 1;
+					visibility: visible;
+				}
+				.header #nav-check:checked ~ .nav-toggler span{
+					background-color: transparent;
+				}
+				.header #nav-check:checked ~ .nav-toggler span::before{
+					top:0;
+					transform: rotate(45deg);
+				}
+				.header #nav-check:checked ~ .nav-toggler span::after{
+					top:0;
+					transform: rotate(-45deg);
+				}
+			}
+			.banner {
+				height: calc(100rem-400rem);
+				background-image: url('photo/ab.jpg');
+				background-size: var(--bg-size);
+				background-attachment:fixed;
+				background-position: center;
+				box-shadow: 0px 5px 7px #666666;
+				border: 1px solid #666666;
+
+			}
+			.banner h2 {
+				margin-top:10rem;
+				margin-bottom:0;
+				margin-left: 3rem;
+				margin-right: 3rem;
+				padding:0;
+				font-size: 5vw;
+				font-family: Californian FB;
+				color: #fff;
+				text-align: center;
+			}
+			.banner hr {
+				margin-top:0;
+				margin-bottom:10rem;
+				width:15rem;
+				height:1rem;
+				border: 0;
+				border-top: 0.3rem solid red;
+			}
+			.block_body{
+				display: block;
+				max-width:100%
+				height:20rem;
+				margin-top:0;
+				margin-left:3rem;
+				margin-right:3rem;
+				margin-bottom:2rem;
+				padding-top:0;
+				background-color: #ffffff;
+				font-family: Times New Roman;
+				font-size: 1rem;
+				box-shadow: 0px 5px 7px #666666;
+				border: 1px solid #fffff ;
+			}
+			
+			.fullbody{
+				margin: 10px 10px;
+				padding-top:10px;
+				padding:1rem 1rem;
+				line-height:normal;
+				font-family: Times New Roman;
+				font-size: 1.5rem;
+				letter-spacing:-1px;
+			}
+			.fullbody img{
+				display:block;
+				display:block;
+				padding:0.5rem;
+				margin: 0 auto; 
+				max-width: 100%; 
+				width:36rem;
+				height:auto;
+				background-color: #ffffff;
+				box-shadow: 0px 0px 5px #666666;
+				border: 1px solid #fffff ;
+			}
+			.fullbody .block_b{
+				margin-top:1rem;
+				margin-left:auto;
+				margin-bottom:1rem;
+				padding:1rem;
+				display:block;
+				max-width:100%;
+				width:500;
+				height:auto;
+				box-shadow: 0px 0px 5px #666666;
+				border: 1px solid #fffff ;
+			}
+			.fullbody .block_b h1{
+				margin-top:2rem;
+				margin-bottom:0;
+				margin-bottom:0;
+				font-size: 3rem;
+				line-height:normal;
+				color: black;
+			}
+			.fullbody .block_b hr{
+				margin:1rem auto;
+				border: 0;
+				border-top: 0.3rem solid #0009;
+			}
+			.fullbody .block_b h2{
+				margin-top:2rem;
+				margin-bottom:0;
+				margin-bottom:0;
+				font-size: 2.5rem;
+				line-height:normal;
+				color: black;
+			}
+			.fullbody .block_b h3 {
+				margin-top:20px;
+				margin-bottom:0;
+				margin-bottom:0;
+				font-size: 2rem;
+				line-height:normal;
+				color: black;
+			}
+			.fullbody .block_b p {
+				margin-top:10px;
+				margin-bottom:0;
+				font-size: 1.5rem;
+				color: black;
+			}
+			
+			.fullbody .block_b ul {
+				margin-top:10px;
+				margin-bottom:0;
+				font-size: 1.5remx;
+				color: black;
+			}
+			.fullbody .block_b li {
+				margin-top:1rem;
+				margin-left:10rem;
+				margin-bottom:0;
+				font-size: 1.5rem;
+				color: black;
+			}
+			#downnav h1{
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				text-align: center;
+				font-family: Lucida Handwriting;
+				color: #fff;
+			}
+			#downnav{
+				margin:0;
+				padding:0;
+				max-width: 100%;
+				min-height: 100px;
+				background: #262626;
+				margin-top:40px;
+				width: 100%;
+				height: 0;
+				background: #262626;
+				box-shadow: 0 -5px 7px #666666;
+				border: 1px solid #666666;
+			}
+			#downnav ul{
+				list-style: none;
+				padding: 0;
+				margin:20px 0px;
+				text-align: center;
+			}
+			#downnav li{
+				display: inline-block;
+				text-align: center;
+				max-width:95px;
+				heght:auto;
+				line-height:0px;
+			}
+			#downnav a{
+				text-decoration: none;
+				color:#fff;
+				width: 100px;
+				display: block;
+				font-size: 15px;
+				fonr-wight: bold;
+				text-align: center;
+				display:block;
+				fonr-wight:bolder;
+			}
+			#downnav a:hover{
+				background:blue;
+				color:#fff;
+				transition:0.1s;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<div class="row align-items-center justify-content-between">
+					<div class="logo">
+						<a href="#">Arnab Mondal</a>
+				</div>
+				<input type="checkbox" id="nav-check">
+				<label for="nav-check" class="nav-toggler">
+					<span></span>
+				</label>
+				<nav class="nav">
+					<ul>
+						<li><a href ="index.html">HOME</a></li>
+						<li><a href ="1.html">HISTORY</a></li>
+						<li><a href ="2.html">MENU</a></li>
+						<li><a href ="3.html">PRODUCT</a></li>
+						<li><a href ="ABOUT US.html">ABOUT US</a></li>
+					</ul>
+				</nav>
+				</div>
+			</div>
+		</header>
+		
+		<div class="banner"><center><h2>ABOUT US</h2><hr/></center></div>
+		<div class="adds">
+			<h1>
+				<marquee>
+					<a href="ABOUT US.html">
+						ABOUT ME
+					</a>
+				</marquee>
+			</h1>
+		</div>
+		<div class="block_body">
+			<section class="fullbody">
+				<img src="photo/Photo.jpg">
+				<div class="block_b">
+					<h1>ARNAB MONDAL</h1><hr/>
+					<h2>MY COLLEGE NAME : <a href="https://sammilanimahavidyalaya.org/">SAMMILANI MAHAVIDYALAYA</a></h2>
+					<h3>REGISTRATION NUMBER : 513-1112-0886-20</h3>
+					<h3>DEPARMENT : COMPUTER SCIENCE(B.Sc HONS.)</h3>
+					<h3>SUBJECT : COMPUTER NETWORKING AND WEB DESIGN LAB</h3>
+					<h3>ROLL NUMBER : 203513-21-0149</h4>
+					<h3>DATE OF BIRTH : 20/03/2002(20th March, 2002)</h3>
+					<h3>SEMESTER : 4TH</h3>
+					<h3>ACADEMIC SESSION : 2022-2023</h3>
+					<p><b><a href="https://sammilanimahavidyalaya.org/">KNOW MORE ABOUT MY COLLEGE CLICK HERE........</a></b></p>
+				</div>
+			</div>
+		</div>
+		<div id="downnav">
+			<h1>Thanks for reading......</h1><hr/>
+			<ul>
+				<li><a href ="index.html">HOME</a></li>
+				<li><a href	="1.html">HISTORY</a></li>
+				<li><a href ="2.html">MENU</a></li>
+				<li><a href ="3.html">PRODUCT</a></li>
+				<li><a href ="ABOUT US.html">ABOUT US</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

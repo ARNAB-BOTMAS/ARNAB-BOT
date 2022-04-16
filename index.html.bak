@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NETWORKING ASSINGMENT BY ARNAB MONDAL</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			::-webkit-scrollbar{
+				width: 5px;
+			}
+			::-webkit-scrollbar-track{
+				background: #dcdcdc;
+			}
+			::-webkit-scrollbar-thumb{
+				background: #0007;
+			}
+			::-webkit-scrollbar-thumb:hover{
+				background: #0007;
+			}
+		</style>
+		<style type=text/css>
+			body {
+				padding: 0;
+				margin: 0;
+				background:#gray;
+				font-family: Arial;
+			}
+			#nvabar h1{
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				text-align: center;
+				color: #fff;
+			}
+			#nvabar{
+				margin:0;
+				padding:0;
+				width: 100%;
+				height: 85px;
+				background: #262626;
+			}
+			#nvabar ul{
+				padding: 0;
+				margin: 0;
+				text-align: right;
+			}
+			#nvabar li{
+				display: inline-block;
+				text-align: center;
+				width:120px;
+				heght:70px;
+				line-height:0px;
+			}
+			#nvabar a{
+				text-decoration: none;
+				color:#fff;
+				width: 100px;
+				display: block;
+				font-size: 15px;
+				fonr-wight: bold;
+				text-align: center;
+				display:block;
+				fonr-wight:bolder;
+			}
+			#nvabar a:hover{
+				background:blue;
+				color:#fff;
+				transition:0.1s;
+			}
+			.logo img{
+				position: absolute;
+				margin-top:10px;
+				margin-left:10px;
+				width:80px;
+				height:80px;
+			}
+			.banner {
+				width: 100%;
+				height: 300px;
+				position: absolute;
+				background-image: url('photo/ab.jpg');
+				background-size: cover;
+				background-position: center;
+			}
+			.banner h2 {
+				margin-top:100px;
+				margin-bottom:0;
+				font-size: 70px;
+				font-family: Californian FB;
+				color: #fff;
+				text-align: center;
+			}
+			.banner hr {
+				margin-top:0;
+				width:350px;
+				height:5px;
+				border: 0;
+				border-top: 5px solid red;
+			}
+			.fullbody{
+				margin-top:330px;
+				margin-left:100px;
+				margin-right:100px;
+				padding:0;
+				font-family: Times New Roman;
+				font-size: 25px;
+			}
+			.fullbody h3 {
+				margin-top:140px;				
+				margin-bottom:0;
+				font-size: 30px;
+				color: black;
+			}
+			.fullbody h4 {
+				margin-top:20px;
+				margin-bottom:0;
+				font-size: 30px;
+				color: black;
+			}
+			.fullbody p {
+				margin-top:10px;
+				margin-bottom:0;
+				font-size: 20px;
+				color: black;
+			}
+			.fullbody ul {
+				margin-top:10px;
+				margin-bottom:0;
+				font-size: 20px;
+				color: black;
+			}
+			.fullbody li {
+				margin-top:10px;
+				margin-left:100px;
+				margin-bottom:0;
+				font-size: 20px;
+				color: black;
+			}
+			#nava{
+				margin-top:30px;
+				text-align:center;
+			}
+			#nava a{
+				text-decoration:none;
+				display: inline-block;
+				padding:8px 16px;
+				margin:20px 20px;
+				background-color:skyblue;
+				color:black;
+			}
+			#downnav h1{
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				text-align: center;
+				font-family: Lucida Handwriting;
+				color: #fff;
+			}
+			#downnav{
+				margin-top:40px;
+				padding:0;
+				width: 100%;
+				height: 110px;
+				background: #262626;
+			}
+			#downnav ul{
+				list-style: none;
+				padding: 0;
+				margin: 20px;
+				text-align: center;
+			}
+			#downnav li{
+				display: inline-block;
+				text-align: center;
+				width:120px;
+				heght:70px;
+				line-height:0px;
+			}
+			#downnav a{
+				text-decoration: none;
+				color:#fff;
+				width: 100px;
+				display: block;
+				font-size: 15px;
+				fonr-wight: bold;
+				text-align: center;
+				display:block;
+				fonr-wight:bolder;
+			}
+			#downnav a:hover{
+				background:blue;
+				color:#fff;
+				transition:0.1s;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="logo"><a href ="#"><img src="photo/logo1.png"></a></div>
+		<div id="nvabar">
+			<h1><marquee>NETWORKING ASSIGNMENT BY ARNAB MONDAL</marquee></h1>
+			<ul>
+				<li><a href ="HOME.html">HOME</a></li>
+				<li><a href	="#">HISTORY</a></li>
+				<li><a href ="#">MENU</a></li>
+				<li><a href ="#">PRODUCT</a></li>
+				<li><a href ="ABOUT US.html">ABOUT US</a></li>
+			</ul>
+		</div>
+		<div class="banner"><h2>INTRODUCTION OF NETWORKING</h2><hr/></div>
+		<div class="fullbody">
+			<h4>What is a network?</h4>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A network is two or more computers (or other electronic devices) that are connected together, usually by cables or Wi-Fi.
+				Some computer networks will have a server. A server is a powerful computer that often acts as a central hub for services in a network, eg emails, internet access and file storage. Each computer connected to a server is called a client.
+				A computer that is not connected to a network is called a standalone computer.
+			</p>
+			<img src="photo/large.png" style="padding:0; margin: 10px; width: 35%; height:420px; float:right">
+			<h4>What are the benefits of a network?</h4>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using a network allows you to share:</p>
+			<ul>
+				<li>hardware, such as a printer.</li>
+				<li>software, allowing multiple users to run the same programs on different computers.</li>
+				<li>data, so that other people can access shared work and you can access your data from any computer on the network.</li>
+			</ul>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Networking is critical if you want to use your computer to communicate.
+				Without it you couldn’t send an email, a text or an instant message.
+				We use a huge network on a daily basis and this is called the internet.
+				Around three billion people use the internet to share data, news and resources, amongst many other things.
+			</p>
+			<h4>What problems can occur with a network?</h4>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If we connect computers or devices together in a network we can expose ourselves to some problems.
+				If the network breaks, this can make a number of tasks it is used for quite difficult.
+				For example, it might not be possible to share photographs and opinions with friends.
+				If computers and devices are networked together, we can expose ourselves to hackers and viruses. Most viruses are spread over a network and most hackers use a network to access other people’s computers.
+				Without a network connection, a hacker would have to physically get to your computer.
+			</p><img src="photo/a1.png" style="display:block; margin: 0 auto; width: 35%; height:420px;">
+			<h4>Types of network</h4>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are two main types of network:</p>
+			<ul>
+				<li>a local area network (LAN)</li>
+				<li>a wide area network (WAN)</li>
+			</ul>
+			<h4>Local area network (LAN)</h4>
+			</p><img src="photo/lan.png" style="display:block; margin: 0 auto; width: 30%; height:360px;">
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A local area network is when computers or devices are connected together over a small geographical area, such as within a home, a building or one site.
+			A LAN can be created to share data or hardware such as a printer, or to share an internet connection.
+			</p>
+			<h4>Wide area network (WAN)</h4>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A wide area network is when computers or devices are connected together over a large geographical area.
+				For example, a company with an office in London and another in Beijing would use a WAN to allow the employees to share one network.
+				Some companies will connect a number of LANs in different areas together to create a WAN.
+				The biggest WAN we know is the internet.
+			</p><img src="photo/wan.png" style="display:block; margin: 0 auto; width: 30%; height:360px;">
+		</div>
+		<div id="nava">
+				<a href="#" class="next">
+				next
+				</a>
+		</div>
+		<div id="downnav">
+			<h1>Thanks for reading......</h1><hr/>
+			<ul>
+				<li><a href ="HOME.html">HOME</a></li>
+				<li><a href	="#">HISTORY</a></li>
+				<li><a href ="#">MENU</a></li>
+				<li><a href ="#">PRODUCT</a></li>
+				<li><a href ="ABOUT US.html">ABOUT US</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
